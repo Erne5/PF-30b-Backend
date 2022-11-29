@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
       categoryName.length
         ? res.status(200).send(categoryName)
         : res.status(404).json({ message: "Category Name not found" });
-    } else return categoryFound;
+    } else return res.status(200).send(categoryFound);
   } catch (e) {
     res.status(404).send(e);
   }

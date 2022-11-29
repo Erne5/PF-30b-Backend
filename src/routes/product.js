@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
       productName.length
         ? res.status(200).send(productName)
         : res.status(404).json({ message: "Product Name not found" });
-    } else return productFound;
+    } else return res.status(200).send(productFound);
   } catch (e) {
     res.status(404).send(e);
   }
@@ -59,7 +59,7 @@ router.post("/", async (req, res) => {
         name: category,
       },
     });
-    if (id) {
+    if (name===100) {
       const productId = productFound.find((e) => e.id === id);
       if (productId.length>0)
         res.status(400).json({ message: "Product Id already exist." });
