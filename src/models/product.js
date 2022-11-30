@@ -17,12 +17,16 @@ module.exports = (sequelize) => {
         type:DataTypes.INTEGER,
         allowNull:false
     },
+    /*
+    example of stock
+    {
+      "xxl":10,
+      "s":15,
+      "10":3
+    }
+    */ 
     stock:{
-        type:DataTypes.INTEGER,
-        allowNull:false
-    },
-    size:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.JSON,
         allowNull:false
     },
   });
