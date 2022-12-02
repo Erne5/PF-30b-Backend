@@ -3,8 +3,9 @@ const { Router } = require("express");
 const categoryMiddleware = require("./category");
 // const userMiddleware = require("./user");
 const productMiddleware = require ('./product')
+const guard=require("../utils/guard")
 const router = Router();
-
+router.use("/",guard);
 //router.use("/admin", adminMiddleware);
 router.use("/category", categoryMiddleware);
 //router.use("/user", userMiddleware);
